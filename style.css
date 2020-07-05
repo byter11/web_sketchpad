@@ -1,0 +1,14 @@
+#grid{
+	display: grid;
+	grid-template-columns: repeat(16, 1fr);
+	grid-template-columns: repeat(16, 1fr);
+	width: 20em;
+	height: 20em;
+	background-color: gray;
+}
+#grid > div {
+	background-color: black;
+}
+#grid div:hover{
+	background-color: white;
+}
