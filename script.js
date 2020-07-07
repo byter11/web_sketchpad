@@ -34,7 +34,6 @@ function set_color(button, newcolor){
 	color = newcolor;
 	document.getElementsByClassName("but-active")[0].className = "";
 	button.className = "but-active";
-	
 }
 function setsize(){
 	size = document.getElementById('size-input');
