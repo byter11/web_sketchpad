@@ -1,15 +1,15 @@
 const grid = document.getElementById('grid');
-mouse = 0;
+isClicked = 0;
 color = "red";
+rainbow = ["rgba(238,130,238,1)","rgba(75,0,130,1)","rgba(0,0,255,1)","rgba(0,128,0,1)","rgba(255,255,0,1)","rgba(255,165,0,1)","rgba(255,0,0,1)"];
 grid.addEventListener('mousedown', e =>{
-	mouse = 1;
-	console.log('mouse is'+ mouse);
+	isClicked = 1;
 	} );
 grid.addEventListener('mouseup', e=>{
-	mouse = 0;
+	isClicked = 0;
 });
 grid.addEventListener('mouseleave', e=>{
-	mouse = 0;
+	isClicked = 0;
 });
 function initgrid(x){
 	for ( let step = 0; step < x*x; step++){
@@ -18,8 +18,11 @@ function initgrid(x){
 		gridelement.addEventListener('mouseenter', active =>{
 			draw(gridelement);
 		});
+		gridelement.addEventListener('mousedown', todraw =>{
+			isClicked = 1;
+			draw(gridelement);
+		});
 		grid.appendChild(gridelement);
-		console.log('yo');
 	}
 }
 // function cleargrid(){
@@ -27,8 +30,17 @@ function initgrid(x){
 // 	setsize();
 // }
 function draw(elem){
-	if(mouse==1)elem.style.backgroundColor = color;
-	console.log("mouse is " + mouse);
+	if(isClicked==1){
+		if(color=='rainbow')
+			elem.style.backgroundColor = rainbow[Math.floor(Math.random()*7)];
+		else
+			elem.style.backgroundColor = color;
+		if(color=='sketch'){
+			const style = getComputedStyle(elem);
+			if(style.opacity > 0 ) elem.style.opacity = style.opacity - 0.1;
+		}
+			
+	}
 }
 function set_color(button, newcolor){
 	color = newcolor;

@@ -5,16 +5,19 @@
 	<title>Sketchpad</title>
   </head>
   <body>
-    <h1>Etch A Sketch</h1>
+    <h1>ETCH &nbsp; A &nbsp; SKETCH</h1>
 	<div id="main">
 	<div id="grid" draggable="false"> </div>
 	<ul id="colors">
-		<li><input class="but-active" type="button" onclick="set_color(this,'red')" id="red" style="background-color: red"></li>
-		<li><input class="" type="button" onclick="set_color(this,'green')" id="green" style="background-color: green"></li>
-		<li><input type="button" onclick="set_color(this,'blue')" id="blue" style="background-color: blue"></li>
-		<li><input type="button" onclick="set_color(this,'purple')" id="purple" style="background-color: purple"></li>
-		<li><input type="button" onclick="set_color(this,'yellow')" id="yellow" style="background-color: yellow"></li>
-		<li><input type="button" onclick="set_color(this,'white')" id="white" style="background-color: white"></li>
+		<li><input type="button" onclick="set_color(this,'black')" id="rgb(0,0,0,1)" style="background-color: black;"></li>
+		<li><input class="but-active" type="button" onclick="set_color(this,'rgba(255,0,0,1)')" id="red" style="background-color: red"></li>
+		<li><input type="button" onclick="set_color(this,'green')" id="rgba(0,128,0,1)" style="background-color: green"></li>
+		<li><input type="button" onclick="set_color(this,'blue')" id="rgba(0,0,255,1)" style="background-color: blue"></li>
+		<li><input type="button" onclick="set_color(this,'purple')" id="rgba(128,0,128,1)" style="background-color: purple"></li>
+		<li><input type="button" onclick="set_color(this,'yellow')" id="rgba(255,255,0,1)" style="background-color: yellow"></li>
+		<li><input type="button" onclick="set_color(this,'white')" id="rgba(255,255,255,1)" style="background-color: white"></li>
+		<li><input type="button" onclick="set_color(this,'rainbow')" id="rainbow"></li>
+		<li><input type="button" onclick="set_color(this,'sketch')" id="sketch"></li>
 	</ul>
 	
 	</div>
