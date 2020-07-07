@@ -52,12 +52,11 @@ li{
 #size-input{
 	width: 15px;
 }
-@media only screen and (max-width: 768px){
+@media only screen and (max-device-width: 768px){
 	#grid{
 		width: 50em;
 		height: 50em;
 	}
-	
 	#colors > li{
 		margin: 40px;
 	}
@@ -69,5 +68,6 @@ li{
 		width: 100px;
 		height: 70px;
 		font-size: 30px;
+		margin: 20px;
 	}
 }
