@@ -2,12 +2,29 @@
 <html>
   <head>
 	<link href="style.css" rel="stylesheet">
-	
 	<title>Sketchpad</title>
   </head>
   <body>
-	<div id="grid" draggable="false">
+    <h1>Etch A Sketch</h1>
+	<div id="main">
+	<div id="grid" draggable="false"> </div>
+	<ul id="colors">
+		<li><input class="but-active" type="button" onclick="set_color(this,'red')" id="red" style="background-color: red"></li>
+		<li><input class="" type="button" onclick="set_color(this,'green')" id="green" style="background-color: green"></li>
+		<li><input type="button" onclick="set_color(this,'blue')" id="blue" style="background-color: blue"></li>
+		<li><input type="button" onclick="set_color(this,'purple')" id="purple" style="background-color: purple"></li>
+		<li><input type="button" onclick="set_color(this,'yellow')" id="yellow" style="background-color: yellow"></li>
+		<li><input type="button" onclick="set_color(this,'white')" id="white" style="background-color: white"></li>
+	</ul>
+	
+	</div>
+	<div id="options">
+	<!--	<button id="clear-button" onclick="cleargrid()"> Clear </button> -->
+	<input id="size-input" onchange=mimicsize() style="margin-left: 5em;" type="text" placeholder="16">
+	X <span id="mimic">16</span>
+	<input type="submit" value="Reset" onclick="setsize()">
 	</div>
   </body>
-  <script src="script.js"> </script>
+  
 </html>
+<script src="script.js"> </script>

@@ -8,25 +8,46 @@ grid.addEventListener('mousedown', e =>{
 grid.addEventListener('mouseup', e=>{
 	mouse = 0;
 });
-function initgrid(){
+grid.addEventListener('mouseleave', e=>{
 	mouse = 0;
-	for ( let step = 0; step < 16*16; step++){
+});
+function initgrid(x){
+	for ( let step = 0; step < x*x; step++){
 		const gridelement = document.createElement('div');
 		gridelement.ondragstart = function() {return false;}
 		gridelement.addEventListener('mouseenter', active =>{
 			draw(gridelement);
-			//gridelement.className = "active";
-			//console.log("activated");
-		});
-		gridelement.addEventListener('mouseout', inactive =>{
-			//gridelement.className = "inactive";
-			//console.log("deactivated");mouse = 0;
 		});
 		grid.appendChild(gridelement);
+		console.log('yo');
 	}
 }
+// function cleargrid(){
+// 	document.getElementById("grid").innerHTML = '';
+// 	setsize();
+// }
 function draw(elem){
 	if(mouse==1)elem.style.backgroundColor = color;
 	console.log("mouse is " + mouse);
 }
-initgrid();
+function set_color(button, newcolor){
+	color = newcolor;
+	document.getElementsByClassName("but-active")[0].className = "";
+	button.className = "but-active";
+	
+}
+function setsize(){
+	size = document.getElementById('size-input');
+	if( size.value>1){
+		document.getElementById("grid").innerHTML = '';
+		document.body.style.setProperty('--size',size.value)
+		initgrid(size.value);
+	}
+}
+function mimicsize(){
+	sizevalue = document.getElementById('mimic');
+	size = document.getElementById('size-input');
+	sizevalue.innerHTML = size.value;
+}
+initgrid(16);
+document.getElementById('size-input').value = '16';

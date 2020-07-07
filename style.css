@@ -1,14 +1,56 @@
+body{
+	--size: 16;
+	background-color: #2C2F33;
+	margin: 0px;
+}
+h1{
+	text-align: center;
+	font-size: 50px;
+	font-style: italic;
+	background-color: gray;
+	margin: 0px;
+	color: white;
+	border-radius: 12px;
+}
+#main{
+	display: table;
+	margin: 0 auto;
+}
 #grid{
 	display: grid;
-	grid-template-columns: repeat(16, 1fr);
-	grid-template-columns: repeat(16, 1fr);
+	float: left;
+	grid-template-columns: repeat(var(--size), 1fr);
 	width: 20em;
 	height: 20em;
+	margin-top: 15px;
 	background-color: gray;
 }
 #grid > div {
-	background-color: black;
+	background-color: white;
 }
 #grid div:hover{
-	background-color: white;
+	background-color: grey;
+}
+#colors{
+	display: inline-block;
+	float: left;
+	list-style-type: none;
+}
+li{
+	margin: 15px;
+}
+.but-active{
+	border-color: gold;
+}
+#clear-button{
+	
+}
+#options{
+	display: table;
+	margin: 10px auto;
+	padding-right: 100px;
+	color: white;
+}
+#size-input{
+	width: 15px;
 }
